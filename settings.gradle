@@ -1,0 +1,2 @@
+rootProject.name='AddFlutterDemo'
+include ':app'
