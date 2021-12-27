@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterActivityLaunchConfigs
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,7 +15,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_jump).setOnClickListener(View.OnClickListener {
             startActivity(
 //                FlutterActivity.createDefaultIntent(this)
-                FlutterActivity.withCachedEngine(EngineId).build(this)
+                FlutterActivity.withCachedEngine(EngineId)
+                    .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
+                    .build(this)
             )
         })
 
